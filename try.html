@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎页面</title>
+    <!-- 添加 GSAP 动画库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- 添加 ScrollTrigger 插件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="general.css">
+    <style>
+        .center{
+            width: 100%;
+            height: auto;
+            overflow: auto;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            font-family: Arial, sans-serif;
+        }
+
+        /* 添加section样式 */
+        section {
+            width: 100%;
+            height: 800px;
+            margin: 0;
+            /*
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* 为每个section设置不同的背景图 */
+        .section1 {
+            background-image: url('images/section1.jpg');
+        }
+
+        .section2 {
+            background-image: url('images/section2.jpg');
+        }
+
+        .section3 {
+            background-image: url('images/section3.jpg');
+        }
+
+        /* 给section中的文字容器添加样式 */
+        section .text-container {
+            background-color: rgba(0, 0, 0, 0.5);  /* 半透明黑色 */
+            padding: 15px 30px;  /* 内边距 */
+            border-radius: 5px;  /* 圆角 */
+            backdrop-filter: blur(5px);  /* 背景模糊效果 */
+            width: 100%;  /* 宽度占满 */
+            text-align: center;  /* 文字居中 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* 添加阴影效果 */
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #34495e;
+            font-size: 1.2rem;
+        }
+
+        .back-button {
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <section class="section1">
+            <div class="text-container">但是高贵者的危险，并不在于他成为善人，<br>而是在于他会成为厚颜无耻者、
+                嘲笑者、否定者。<br>唉，我曾认识那些失去自己的最高希望的高贵者。<br>现在他们污蔑一切高尚的希望。<br>
+                现在他们厚颜无耻地度日，追寻短暂的欢乐，几乎没有超过一天以上的目标。</div>
+        </section>
+        <section class="section2">
+            <div class="text-container">“精神也是一种情欲”——他们这样说。<br>于是他们的精神的翅膀折断了：
+                如今精神在爬来爬去，污染它所咬之处。<br>从前他们想成为英雄：现在他们是荒淫的人。<br>
+                对于他们，英雄乃是怨恨和害怕的对象。</div>
+        </section>
+        <section class="section3">
+            <div class="text-container xk_font">可是我凭我的爱和希望恳求你：<br>
+                不要抛弃掉你的灵魂深处的英雄！<br>
+                把你的最高希望当作神圣的事物保持着！
+                <br>——查拉图斯特拉如是说。</div>
+        </section>
+    </div>
+    <!-- 引入自定义JS文件 -->
+    <script src="try.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+.title_part
+{
+    position: relative;
+
+    width: 100%;
+    height: 850px;
+    top:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title_part  .title_back
+{
+    position: absolute;
+    background-image: url('part_4/Webpage_4_1/abacus.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height:800px;
+    top:0px;
+}
+.title_part .title
+{
+    position:absolute;
+    background-image: url('part_4/Webpage_4_1/title.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 75%;
+    height:400px;
+    top:150px;
+}
+.pi_part
+{
+    position: relative;
+    width: 100%;
+    height: 1500px;
+    background-color: rgb(16, 45, 99);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+你一共有三个需要调整的区域，我建议你从上到下，按照我给的顺序调整
+不要叛逆！不要叛逆！不要叛逆！
+从上到下才是从整体到局部的调整顺序
+*/
+/*
+这里是外面的白线和四个圆所在的 div，
+你可以修改它的 top width height 等参数
+最好不要修改其他参数，除非你真的很想改
+*/
+.pi_part .round_pic
+{
+    position: absolute;
+    top:100px;
+    width: 35%;
+    height:740px;
+    background-image: url('part_4/r_c/line.png');
+    background-color: pink;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.pi_part .round_pic img
+{
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            以下是你的调整区域，这里调整的是四个圆圈
+            scale top left bottom right 等参数你应该很熟悉了
+            此处不过多介绍
+请注意：
+    这里的top left等距离的参照物是名为.round_pic的 div
+    而不是整个板块
+    我知道你听不懂，所以我把最外层的方框用粉色标出来了。
+    请以粉色方框的边界为调整的参考
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+#round_pic1
+{
+    scale:1.75;
+    top:58px;
+    left:125px;
+}
+#round_pic2
+{
+    scale:2;
+    top:210px;
+    left:290px;
+}
+#round_pic3
+{
+    scale:1.4;
+    top:340px;
+    left:135px;
+}
+#round_pic4
+{
+    scale:2.4;
+    top:548px;
+    left:225px;
+}
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++
+            调整区域到此结束
+++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.pi_part .pi_title
+{
+    position: absolute;
+    width:400px;
+    height: auto;
+    top:100px;
+    right:300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.round_intros
+{
+    width: 1500px;
+    height: 1500px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+}
+.pi_part .round_intro
+{
+    position: absolute;
+    height:100px;
+    width: auto;
+    opacity: 0;
+    transition:all 1s ease-in-out; 
+}
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++
+            以下是你的调整区域，这里调整的是3 3.14等图片
+                参数说明：
+        top left bottom right：距离某一边的位置
+        translateX(M%)：向水平方向移动 M% 个自身的宽度
+        transform: translateX(-100%)：向左移动 100% 个自身的宽度
+        transform: translateX(100%)：向右移动 100% 个自身的宽度
+请注意：
+1：.pi_part #r_i1等内部是你需要修改的内容，
+请**不要**修改.pi_part #r_i1.active等的内容
+2：从上到下四组（其实是八个{}）的内容，分别表示从上到下四个插入的图片
+3：你所有调整的top left等定位数值，是针对元素最终播放完动画后的位置
+4：transform: translateX(100%)对应的位置，是播放动画前的位置
+
+举例如下：
+.pi_part #r_i1 
+{
+    top:200px;
+    left: 200px;
+    transform: translateX(-100%);
+}
+第一张图片的最终位置是：
+top:200px;
+left: 200px;
+但是为了实现插入的效果，第一张图片的起始位置会因为
+transform: translateX(-100%);
+而向左移动一个自身宽度
+所以，图片会有一个自左向右飞入的效果，是不是很好理解？
+++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.pi_part #r_i1 
+{
+    scale:1.35;
+    top:160px;
+    left: 410px;
+    transform: translateX(-100%);
+}
+.pi_part #r_i1.active
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pi_part #r_i2 {
+    scale:1.35;
+    top:310px;
+    right:230px;
+    transform: translateX(100%);
+}
+.pi_part #r_i2.active
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pi_part #r_i3 {
+    scale:1.35;
+    top:440px;
+    left: 140px;
+    transform: translateX(-100%);
+}
+.pi_part #r_i3.active
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pi_part #r_i4 {
+    scale:1.35;
+    top:650px;
+    right: 450px;
+    transform: translateX(100%);
+}
+.pi_part #r_i4.active
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++
+            调整区域到此结束
+++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+.cut_part
+{
+    position: relative;
+    width: 100%;
+    height:900px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cut_part .cut_intro
+{
+    position: absolute;
+    top:150px;
+    width: 400px;
+    height: 400px;
+    background-color: rgb(89, 158, 218);
+    right:250px;
+}
+.cut_part .cut_intro .cut_title
+{
+    position:relative;
+    top:0;
+    left: 0;
+    height: 150px;
+    width: 80%;
+}
+.cut_part .poly_times
+{
+    position: relative;
+    left:100px;
+}
+.cut_part .rounds
+{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    left:300px;
+}
+.cut_part .rounds img
+{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+.cut_part .cut_pics
+{
+    position: absolute;
+    bottom:50px;
+}
+/*
+    这里也可以修改，这里是滑入的最下端的五个text
+    width是宽度，height 不要动
+    margin-right是两张图片间隔的距离
+*/
+.cut_part .cut_pics img
+{
+    width: 60px;
+    height: auto;
+    margin-right: 50px;
+}
+.cut_part .cut_pic
+{
+    opacity: 0;
+    transform: translateY(60%);
+    transition: all 2s;
+}
+.cut_part .cut_pic.active
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+.cut_part .round_slider
+{
+    width: 100px;
+
+}
+.cut_part #slider 
+{
+    width: 300px;
+}
+/* 这里不考虑浏览器的兼容性 */
+input[type="range"] {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: -webkit-linear-gradient(#ffa200, #ffa200) no-repeat white;
+    background-size: 50% 100%; /* 因为周期默认value=0.50正好占50% */
+}
+/* -webkit-slider-thumb仅对谷歌浏览器有效 */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #aaa;
+    width: 8px;
+    height: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #666;
+}
+
+/* 左侧渐变色的写法,默认滑块在最左侧所以下面white为0% */
+#slider 
+{
+    background: linear-gradient(to right, #ffa200, white 0%, white);
+    background-size: 100% 100%;
+}

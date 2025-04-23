@@ -1,0 +1,145 @@
+/* 重置所有元素的margin和padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 重置根元素 */
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* 重置body */
+body {
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 重置列表样式 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置链接样式 */
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* 重置标题元素 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+/* 重置表单元素 */
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+button,
+input {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    appearance: button;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    cursor: pointer;
+}
+
+/* 重置表格 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置图片 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+    vertical-align: middle;
+}
+
+/* 重置引用和代码块 */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* 重置水平线 */
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+/* 重置文本选中样式 */
+::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+/* 重置滚动条样式 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 移除音频和视频的默认控件样式 */
+audio,
+canvas,
+video {
+    display: inline-block;
+} 

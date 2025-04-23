@@ -1,0 +1,664 @@
+
+.content
+{
+    position: relative;
+    background-image: url('part_1/kid.jpg');
+    background-position:top 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.solar_part
+{
+    position: relative;
+    width:100%;
+    height:800px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index:1;
+}
+.solar_back
+{
+    position:absolute;
+    width:100%;
+    height: 800px;
+    display:flex;
+    background-image: url('part_1/daytime.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation:dark 7s forwards;
+    opacity: 1;
+    z-index:2;
+}
+.solar_part .solar_title
+{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    z-index:5;
+}
+
+.solar_part #mid_img
+{
+    position: absolute;
+    z-index:3;
+}
+.solar_part .eclipse
+{
+    position: absolute;
+    animation: rise 7s;
+    z-index: 4;
+}
+
+.book_part
+{
+    position: relative;
+    width: 100%;
+    height: 900px;
+    margin-bottom: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.book_part  .fade_up
+{
+    z-index: 1;
+    position: absolute;
+    top:0
+}
+.book_part .fade_down
+{
+    z-index: 1;
+    position: absolute;
+    bottom:0;
+}
+.book_part .origin img
+{
+    position:absolute;
+    height: 230px;
+    width: 150px;
+    animation: book_float 5s infinite;
+    z-index: 0;
+}
+.book_intro
+{
+    text-indent: 2em;
+    position: absolute;
+    overflow: auto;
+    width:700px;
+    padding: 20px;
+    height:auto;
+    background-color: rgba(87, 154, 147, 0.8);
+    ;
+    z-index: 1;
+    opacity: 0;
+    transition:all 1.5s ease-in-out;
+}
+.book_intro.active 
+{
+    opacity: 1;
+}
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+请在此处对每一张图片做出调整，nth-child(i)代表是第 i 个图片
+
+                      参数说明
+            top/bottom          到上/下端的距离
+            left/right          到左/右端的距离
+            animation-delay     每个动画的延迟播放时间
+            scale               每张图片的大小，1为原图比例
+            opacity             每张图片的透明度1为完全显示
+            z-index             图层的位置，默认为0,1号图层在0号之上
+
+请注意：
+只有 top left 是必须要填写的参数，其他均可以不使用
+你的代码只能在{ }内部编写，用;换行，参照我写的格式即可
+其他代码同理，可以随意改动，如果觉得改正后更优，请及时与我交流
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.book_part .origin img:nth-child(1)
+{
+    top:70%;
+    left:6%;
+    animation-delay: 1s;
+    scale:1.03;
+    opacity:40%;
+}
+.book_part .origin img:nth-child(2)
+{
+    top:32%;
+    left:8%;
+    animation-delay: 0.7s;
+    scale: 1.1;
+    opacity:75%;
+}
+.book_part .origin img:nth-child(3)
+{
+    top:15%;
+    left:23%;
+    animation-delay: 1.5s;
+    scale:1.17;
+    opacity:88%;
+}
+.book_part .origin img:nth-child(4)
+{
+    top:55%;
+    left:28%;
+    animation-delay: 0.6s;
+    scale:1.2;
+    opacity:78%;
+}
+.book_part .origin img:nth-child(5)
+{
+    top:4%;
+    left:40%;
+    animation-delay: 0.3s;
+    scale:1.06;
+    opacity:45%;
+}
+.book_part .origin img:nth-child(6)
+{
+    top:39%;
+    left:45%;
+    animation-delay: 1.3s;
+    scale:1.26;
+    opacity:90%;
+}
+.book_part .origin img:nth-child(7)
+{
+    top:28%;
+    right:30%;
+    animation-delay: 2s;
+    scale:1.2;
+    opacity:58%;
+}
+.book_part .origin img:nth-child(8)
+{
+    top:65%;
+    right:23%;
+    animation-delay: 0.6s;
+    scale:1.2;
+    opacity:85%;
+}
+.book_part .origin img:nth-child(9)
+{
+    top:10%;
+    right:16%;
+    animation-delay: 0.2s;
+    scale:1;
+    opacity:50%;
+}
+.book_part .origin img:nth-child(10)
+{
+    top:45%;
+    right:6%;
+    animation-delay: 1.4s;
+    scale:1.15;
+    opacity:75%;
+}
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+结束调参后，请自行观察 HTML ，若感觉参数合适，将两段注释中间的部分发给我
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+.light_part
+{
+    position: relative;
+    width:100%;
+    height:900px;
+    margin-bottom: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.light_part .slide_intro
+{
+    background-image: url('part_1/intro.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 200px;
+    position: absolute;
+    opacity: 0;
+    transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    left: -10px;
+    top: 33%;
+    transform: translateX(-90%);
+    cursor: pointer;
+}
+.light_part .slide_intro.active
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+.light_part .light_title
+{
+    font-size: 60px;
+    position:absolute;
+    width: 20%;
+    height:100px;
+    left: 200px;
+    top: 135px;
+}
+.light_part .cards
+{
+    z-index:1;
+    position: absolute;
+    left: -1px;
+    top: 30%;
+    opacity: 0;
+    transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-120%);
+    display: flex; /* 添加此行 */
+    flex-direction: row; /* 添加此行 */
+    perspective: 1000px;
+}
+.card-wrapper {
+    display: inline-block;
+    width: 140px; /* 与卡片同宽 */
+    height: 280px; /* 与卡片同高 */
+    margin: 0 10px;
+    perspective: 1000px;
+}
+.card > * {
+    pointer-events: none;
+}
+
+.card-wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+.light_part .cards .card
+{
+    position: relative;
+    width: 140px;
+    height: 280px; /* 根据实际图片尺寸调整 */
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 更平滑的缓动函数 */
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.card-back {
+    transform: rotateY(180deg);
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.light_part .cards.active 
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+.light_part .cards .card:nth-child(1)
+{
+    margin-left: 10px;
+}
+.light_part .light_pic
+{
+    position:absolute;
+    top:0px;
+    right:110px;
+    width: 670px;
+    height: 500px;
+    object-fit: contain;
+    transform: translateX(80%);
+    opacity: 0;
+    transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.light_part .light_pic.active
+{
+    transform: translateX(0);
+    opacity: 1;
+}
+.light_part .light_pic img
+{
+    position:absolute;
+    opacity: 0;
+    transition:ease-in-out 1s;
+}
+.light_part .light_pic img:nth-child(1)
+{
+    opacity: 1;
+}
+.light_part .light_pic img:nth-child(7)
+{
+    opacity: 1;
+}
+.light_part .light_sum
+{
+    position:absolute;
+    bottom: 30px;
+    width: 60%;
+    height:15%;
+    animation: float 3s ease-in-out infinite;
+}
+.shadow_part
+{
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    margin-bottom: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.shadow_part .words_wrapper
+{
+    position:absolute;
+    left:150px;
+    width:400px;
+    height:200px;
+}
+.shadow_part .words_wrapper .word_part
+{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    bottom: 0;
+}
+.shadow_part .words_wrapper .word_part .title 
+{
+    font-size: 60px;
+    position: absolute;
+    left:0px;
+    top:-30px;
+}
+.shadow_part .words_wrapper .word_part .word_content 
+{
+    font-size: 20px;
+    position: absolute;
+    top:80px;
+    left:0px;
+}
+.shadow_part .buttons
+{
+    position:absolute;
+    right:50px;
+    top:200px;
+    width: 150px;
+    height:80px;
+    display: flex;
+    animation: botton_float 2.5s ease-in-out infinite;
+    z-index: 1;
+}
+.shadow_part .buttons .sun_button
+{
+
+    height:60px;
+    width:60px;
+    background-image: url('part_1/sun_button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.shadow_part .buttons .moon_button
+{
+    position: relative;
+    bottom: -10px;
+    margin-left: 20px;
+    height:50px;
+    width:50px;
+    background-image: url('part_1/moon_button.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.shadow_part .white
+{
+    position:absolute;
+    bottom:20px;
+    width: 100%;
+    height:500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shadow_part .white .white_pic
+{
+    position:absolute;
+    top:50px;
+}
+.shadow_part .white .grid
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+}
+.object
+{
+    position: absolute;
+    bottom:78px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.object .ball  
+{
+    position: absolute;
+    top:30px;
+    width: 40%;
+    height:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index:1;
+}
+.object .ball  img
+{
+    position: absolute;
+    scale: 0.5;
+}
+.object .rod
+{
+    position: absolute;
+    top:-20px;
+    width: 25%;
+    height:25px;
+    bottom: 0;
+
+}
+.object .rod img
+{
+    scale: 0.5;
+}
+.shadow_part .path 
+{
+    position:absolute;
+    top:-10px;
+    width: 95%;
+    height:95%;
+    background-position: center;
+    background-repeat: no-repeat ;
+    background-size: contain;
+    transition: all 0.5s ease-in-out;
+}
+.shadow_part .sun_path
+{
+    background-image: url('part_1/sun_path.png');
+}
+.shadow_part .moon_path
+{
+    background-image: url('part_1/moon_path.png');
+}
+.shadow_part .years_txt
+{
+    position: absolute;
+    bottom:0;
+    right:-30px;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shadow_part .years_txt .years_intro
+{
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+}
+.shadow_part .years_txt .year_prev
+{
+    position: absolute;
+    left:100px;
+    height: 30px;
+    width: 30px;
+    background-image: url('part_1/prev_arrow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+.shadow_part .years_txt .year_content
+{
+    position: absolute;
+    left: 150px;
+    font-size: 25px;
+}
+.shadow_part .years_txt .year_next
+{
+    position: absolute;
+    left:240px;
+    height: 30px;
+    width: 30px;
+    background-image: url('part_1/next_arrow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+.about
+{
+    width: 100%;
+    height:200px;
+}
+/*
+    Animation 动画部分
+*/
+@keyframes float 
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(-30px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
+@keyframes botton_float 
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(-10px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rise
+{
+    0%
+    {
+        transform: translateY(600px);
+        opacity: 0;
+    }
+    25%
+    {
+        transform: translateY(600px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes dark {
+   0%
+   {
+        opacity: 1;
+   }
+   25%
+   {
+        opacity: 1;
+   }
+   100%
+   {
+        opacity: 0;
+   }
+}
+@keyframes book_float
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(30px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
+/* test-------------test---------------------test*/
+#output { 
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    margin: 20px 0;
+    /* 关键样式：保留换行和连续空格 */
+    white-space: pre-wrap;
+    /* 优化字体显示 */
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+  

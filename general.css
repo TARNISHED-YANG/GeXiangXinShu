@@ -1,0 +1,76 @@
+html,body
+{
+    scrollbar-gutter: auto;
+    display: flex;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+    min-width: 1500px;
+    margin:0;
+    overflow-y: scroll;
+    padding:0;
+}
+html
+{
+    background-color: rgb(0, 0, 0);
+}
+
+body
+{
+    overflow: hidden;
+    background-image: url('part_2/page1/background.jpg');
+    background-position: center;
+}
+div
+{
+    color:white;
+    font-size:20px;
+    margin:0;
+    padding: 0;
+}
+.content
+{
+    min-width: 1500px;
+    min-height: 1000px;
+    position: relative;
+    overflow: hidden;
+    width: 1500px;
+}
+h1
+{
+    font-size: 60px;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    margin: 10px 0;
+}
+/*滚动条里面轨道*/
+body::-webkit-scrollbar-track{
+    background-color: black; /* 轨道透明 */
+  }
+  /*定义滚动条整体的样式*/
+  body::-webkit-scrollbar{
+    width: 6px;
+    background-color: rgb(20, 19, 19);
+  }
+  html::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+    border: 2px solid transparent; /* 通过透明边框防止滚动条挤压内容 */
+  }
+  
+@font-face 
+{
+    font-family: "xk";
+    src: url("font/xk_font.ttf");
+}
+
+.xk_font
+{
+    font-family: "xk";
+    font-size:50px;
+}
+  

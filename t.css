@@ -1,0 +1,204 @@
+.title_part
+{
+    width: 100%;
+    height:800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0;
+    background-image: url('part_2/page1/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.title_part .title_pic
+{
+    position:absolute;
+
+}
+.book_part
+{
+    width:100%;
+    height:800px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('part_2/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.book_part .mountain
+{
+    position:absolute;
+    top:5px;
+    width: 100%;
+}
+.book_part .mountain img
+{
+    position: absolute;
+}
+.book_part .book_page
+{
+    width: 100%;
+    height:400px;
+    position: absolute;
+    bottom:0;
+}
+.book_page_img
+{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+}
+.words_slide_in 
+{
+    opacity: 0;
+    transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(100%);
+}
+.words_slide_in.active
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+.words_slide_in:nth-child(1)
+{
+    position: absolute;
+    left:13.3%;
+    top:14.9%;
+}
+.words_slide_in:nth-child(2)
+{
+    position: absolute;
+    left:26.8%;
+    top:27%;
+}
+.words_slide_in:nth-child(3)
+{
+    position: absolute;
+    left:33.1%;
+    top:11.8%;
+}
+.words_slide_in:nth-child(4)
+{
+    position: absolute;
+    left:42%;
+    top:24.1%;
+}
+.words_slide_in:nth-child(5)
+{
+    position: absolute;
+    left:53.9%;
+    top:14.9%;
+}
+.words_slide_in:nth-child(6)
+{
+    position: absolute;
+    left:66.8%;
+    top:27%;
+}
+.words_slide_in:nth-child(7)
+{
+    position: absolute;
+    left:73.3%;
+    top:11.8%;
+}
+.words_slide_in:nth-child(8)
+{
+    position: absolute;
+    left:82%;
+    top:24.1%;
+}
+.moon_part
+{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('part_2/page3/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.moon_part .moon_earth_img
+{
+    position: absolute;
+    transition: all 1s ease-in-out;
+}
+.moon_part .moon_earth_img.change
+{
+    scale:0.5;
+    transform: translateX(-200%);
+}
+.moon_part .little_title
+{
+    position: absolute;
+    left:77.8%;
+    top:9.1%;
+    opacity: 0;
+    transform: translateX(89%);
+    transition: all 0.8s ease-in;
+}
+.moon_part .little_title.active 
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+.moon_part .moon_chara
+{
+    position: absolute;
+    height: 200px;
+    width: 300px;
+    left:5.6%;
+    top:72.9%;
+    opacity: 0;
+    transform: translateX(-89%);
+    transition: all 1s ease-in;
+    cursor: pointer;
+}
+.moon_part .moon_chara.active 
+{
+    opacity: 1;
+    transform: translateX(0);
+}
+.moon_part .moon_chara.active.change
+{
+    transform: translateX(160%) translateY(-130%);
+    scale:1.5;
+}
+.moon_part .moon_chara img
+{
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease-in;
+}
+.moon_part .intro
+{
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    top:48.6%;
+    left:53.6%;
+}
+.moon_part .moon_button
+{
+    position: absolute;
+    left:84.6%;
+    top:87.4%;
+    cursor: pointer;
+    transform: translateX(89%);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+}
+.moon_part .moon_button.active
+{
+    opacity: 1;
+    transform: translateX(0);
+}

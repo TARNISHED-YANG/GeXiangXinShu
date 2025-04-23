@@ -1,0 +1,206 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow:  hidden;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-image: url('images/first_page.jpg');
+    background-size: cover;
+    z-index:-2;
+}
+.first_page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/star_track.jpg');
+    background-position: center;
+    background-size: contain; /* 确保背景图完整显示 */
+    background-repeat: no-repeat; /* 防止背景图重复 */
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    position: relative; /* 确保子元素可以绝对定位 */
+}
+.first_page.shrink
+{
+    transform:  scale(0.3) translate(80%, -27%) 
+   rotate(-10deg); /* 平滑移动、缩放和旋转 */
+}
+
+.first_page.mid {
+  transform: scale(0.7) translate(0,-5%);
+}
+
+.first_page img {
+    opacity: 0;
+    position: absolute; /* 使图片绝对定位，从而允许重叠 */
+    transition: opacity 0.3s; /* 添加透明度渐变效果 */
+    height: 60%;
+    width: 60%;
+    object-fit: contain; /* 确保图片完整显示 */
+}
+#first_star_img
+{
+    opacity: 1;;
+}
+#star
+{
+    opacity: 0;
+    scale: 0.7; /* 调整缩放比例 */
+    position: absolute;
+    transition: all 2s ease-in;
+   
+}
+.main_page_logo {
+    margin-left: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column; /* 使子元素垂直排列 */
+    overflow: hidden;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.main_page_logo p {
+    font-size:40px;
+    margin: 0; /* 移除段落的默认外边距 */
+
+}
+#main_page_logo_1
+{
+    color: white;
+    z-index: 100;
+}
+#main_page_logo_2
+{
+    color: rgba(239, 205, 69, 0.574);
+    z-index: 100;
+}
+#about_us_1
+{
+    color: white;
+    position: absolute;
+    top:0;
+    right:0;
+    font-size: 30px;
+    margin: 0;
+    z-index: 100;
+}
+#about_us_2
+{
+    color:rgba(239, 205, 69, 0.574);
+    position: absolute;
+    top: 40px;
+    right: 0;
+    font-size: 30px;
+    margin: 0;
+    z-index: 100;
+}
+#first_page_book_name
+{
+    scale: 1;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+
+}
+.jump_to
+{
+    background-image: url('images/jump_to.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transition: all 0.3s;
+    bottom:11%;
+    font-size: 40px;
+    color:rgba(239, 205, 69, 0.574);
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    animation: float 3s ease-in-out infinite;
+}
+.intro
+{
+    position: absolute; /* 确保元素定位 */
+    top: 20%; /* 设置元素的垂直位置 */
+    left: 5%; /* 设置元素的水平位置 */
+    height:60%;
+    width: 40%;
+    opacity: 0;
+    transition: all 1.2s;
+}
+.intro_header
+{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 55px;
+    color: white;
+}
+.intro_content
+{
+    display:auto;
+    font-family: "KaiTi", "楷体", serif;
+    font-size:30px;
+    color:white;
+}
+.four_chap
+{
+    position: absolute;
+    height: 20%;
+    width:72%;
+    left:14%;
+    bottom: 2.3%;
+    display: flex;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+    transition: all 1s ease-in;
+}
+.chap_1,.chap_2,.chap_3
+{
+    display: flex;
+    float: left;
+    width: 23.5%;
+    margin-right:2%;
+    transition: all 1s ease-in;
+    font-size:40px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.chap_4
+{
+    display: flex;
+    float: left;
+    width: 23.5%;
+    transition: all 1s ease-in;
+    font-size:40px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes float 
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(-15px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}

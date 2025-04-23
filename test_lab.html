@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: #1a1a1a;
+            overflow: hidden;
+        }
+
+        #sparkCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-family: Arial;
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="clickArea">
+        <canvas id="sparkCanvas"></canvas>
+        <div class="content">点击任意位置</div>
+    </div>
+
+    <script>
+        (function() {
+            // 配置参数
+            const config = {
+    /**
+     * 火花颜色配置
+     * 类型: CSS颜色字符串
+     * 示例: 
+     * - "#ff0000" (红色)
+     * - "rgba(255,255,0,0.8)" (半透明黄色)
+     * - "hsl(180, 100%, 50%)" (青色)
+     */
+    sparkColor: "#fff",
+
+    /**
+     * 单个火花的初始长度
+     * 类型: 数字 (像素值)
+     * 注意: 实际长度会随着动画进度逐渐缩短
+     */
+    sparkSize: 30,
+
+    /**
+     * 火花扩散的最大半径
+     * 类型: 数字 (像素值)
+     * 实际扩散距离 = sparkRadius * extraScale
+     */
+    sparkRadius: 15,
+
+    /**
+     * 每次点击产生的火花数量
+     * 类型: 整数
+     * 建议值: 8的倍数（确保圆形均匀分布）
+     * 调整示例:
+     * - 8: 标准八角星形
+     * - 16: 更密集的放射效果
+     * - 4: 十字形效果
+     */
+    sparkCount: 8,
+
+    /**
+     * 动画完整周期持续时间
+     * 类型: 数字 (毫秒)
+     * 调整建议:
+     * - 200: 快速闪现效果
+     * - 1000: 慢动作效果
+     */
+    duration: 400,
+
+    /**
+     * 动画缓动函数类型
+     * 可选值:
+     * - "linear": 线性动画
+     * - "ease-in": 先慢后快
+     * - "ease-out": 先快后慢（默认）
+     * - "ease-in-out": 慢-快-慢
+     */
+    easing: "ease-in-out",
+
+    /**
+     * 整体缩放系数
+     * 类型: 数字
+     * 作用: 同时影响扩散半径和火花长度
+     * 示例:
+     * - 0.5: 缩小为一半效果
+     * - 2.0: 放大两倍效果
+     */
+    extraScale: 1.0
+    };
+
+            // 获取DOM元素
+            const container = document.getElementById('clickArea');
+            const canvas = document.getElementById('sparkCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            let sparks = [];
+            let animationId;
+
+            // 调整canvas尺寸
+            function resizeCanvas() {
+                const rect = container.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
+
+            // 缓动函数
+            function easeFunc(t) {
+                switch (config.easing) {
+                    case "linear": return t;
+                    case "ease-in": return t * t;
+                    case "ease-in-out": return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+                    default: return t * (2 - t);
+                }
+            }
+
+            // 动画循环
+            function draw(timestamp) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                sparks = sparks.filter(spark => {
+                    const elapsed = timestamp - spark.startTime;
+                    if (elapsed >= config.duration) return false;
+
+                    const progress = elapsed / config.duration;
+                    const eased = easeFunc(progress);
+
+                    const distance = eased * config.sparkRadius * config.extraScale;
+                    const lineLength = config.sparkSize * (1 - eased);
+
+                    const x1 = spark.x + distance * Math.cos(spark.angle);
+                    const y1 = spark.y + distance * Math.sin(spark.angle);
+                    const x2 = x1 + lineLength * Math.cos(spark.angle);
+                    const y2 = y1 + lineLength * Math.sin(spark.angle);
+
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.strokeStyle = config.sparkColor;
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+
+                    return true;
+                });
+
+                animationId = requestAnimationFrame(draw);
+            }
+
+            // 点击事件处理
+            container.addEventListener('click', function(e) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const newSparks = Array.from({ length: config.sparkCount }, (_, i) => ({
+                    x,
+                    y,
+                    angle: (2 * Math.PI * i) / config.sparkCount,
+                    startTime: performance.now()
+                }));
+
+                sparks.push(...newSparks);
+            });
+
+            // 初始化
+            new ResizeObserver(() => resizeCanvas()).observe(container);
+            resizeCanvas();
+            animationId = requestAnimationFrame(draw);
+
+            // 清理
+            window.addEventListener('beforeunload', () => {
+                cancelAnimationFrame(animationId);
+            });
+        })();
+    </script>
+</body>
+</html>

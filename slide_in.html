@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多元素视差滑入</title>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            min-height: 200vh;
+        }
+
+        .scroll-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 基础动画元素样式 */
+        .slide-box {
+            position: relative;
+            width: 80%;
+            min-height: 300px;
+            margin: 100px auto;
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* 左右入场配置 */
+        .slide-box[data-direction="left"] {
+            transform: translateX(-100%);
+        }
+        .slide-box[data-direction="right"] {
+            transform: translateX(100%);
+        }
+
+        /* 触发后状态 */
+        .slide-box.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* 响应式布局 */
+        @media (max-width: 768px) {
+            .slide-box {
+                width: 90%;
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scroll-container">
+        <!-- 左滑入元素 -->
+        <div class="slide-box" data-direction="left"></div>
+        
+        <!-- 右滑入元素 -->
+        <div class="slide-box" data-direction="right"></div>
+
+        <!-- 交替添加更多元素 -->
+        <div class="slide-box" data-direction="left"></div>
+        
+        <div class="slide-box" data-direction="right"></div>
+    </div>
+
+    <script>
+        // 创建观察器（优化配置）
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // 移除观察避免重复触发
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: "-20% 0px",  // 提前20%视口触发
+            threshold: 0.1
+        });
+
+        // 批量观察所有元素
+        document.querySelectorAll('.slide-box').forEach(box => {
+            // 设置随机延迟增强视差效果
+            box.style.transitionDelay = `${Math.random() * 0.5}s`;
+            observer.observe(box);
+        });
+    </script>
+</body>
+</html>

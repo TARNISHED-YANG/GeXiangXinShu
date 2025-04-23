@@ -1,0 +1,153 @@
+/* dev-log.css */
+:root {
+    --primary-color: #2A2E37;
+    --accent-color: #6C63FF;
+    --text-color: #E0E0E0;
+    --timeline-width: 3px;
+}
+body,html
+{
+    background: linear-gradient(to left,rgb(37, 10, 99), rgb(21, 21, 93)); /* 添加渐变背景 */
+}
+.dev-log-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block; 
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 1rem;
+    background: var(--primary-color);
+    z-index: 2;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: var(--timeline-width);
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(108, 99, 255, 0.2), 
+        var(--accent-color), 
+        rgba(108, 99, 255, 0.2)
+    );
+    transform: translateX(-50%);
+}
+
+.log-entry {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.log-entry:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.log-entry:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-point {
+    position: absolute;
+    top: 2rem;
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.4);
+}
+
+.entry-content {
+    background: rgba(42, 46, 55, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.entry-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(108, 99, 255, 0.3);
+}
+
+.log-date {
+    display: block;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.log-title {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    position: relative;
+}
+
+.log-title::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.log-desc {
+    color: #CCCCCC;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.log-desc p {
+    margin: 0.8rem 0;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.log-desc p::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .log-entry {
+        width: 100%;
+        left: 0 !important;
+        padding: 1rem;
+        text-align: left !important;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-point {
+        left: 20px !important;
+    }
+}

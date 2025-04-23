@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Grid Motion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #000;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-container {
+            position: relative;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+
+        .grid-row {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .grid-item {
+            width: 100px;
+            height: 100px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transform: rotate(-45deg);
+            overflow: hidden;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(45deg);
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-overlay"></div>
+    <div class="grid-container" id="gridContainer"></div>
+
+    <script>
+        const createGrid = () => {
+            const container = document.getElementById('gridContainer');
+            const rows = 4;
+            const cols = 7;
+            const totalItems = rows * cols;
+            
+            for (let i = 0; i < rows; i++) {
+                const row = document.createElement('div');
+                row.className = 'grid-row';
+                
+                for (let j = 0; j < cols; j++) {
+                    const item = document.createElement('div');
+                    item.className = 'grid-item';
+                    
+                    // 添加示例内容（可以替换为实际内容）
+                    const contentIndex = i * cols + j;
+                    if (contentIndex % 4 === 0) {
+                        item.innerHTML = `<img src="https://picsum.photos/100?random=${contentIndex}" alt="">`;
+                    } else {
+                        item.textContent = contentIndex + 1;
+                    }
+                    
+                    row.appendChild(item);
+                }
+                container.appendChild(row);
+            }
+        };
+
+        const initAnimation = () => {
+            const rows = document.querySelectorAll('.grid-row');
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            const inertiaFactors = [0.6, 0.4, 0.3, 0.2];
+            const maxMove = 150;
+
+            // 鼠标移动监听
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            // 动画循环
+            const update = () => {
+                rows.forEach((row, index) => {
+                    const centerX = window.innerWidth / 2;
+                    const centerY = window.innerHeight / 2;
+                    
+                    // 计算对角线方向偏移
+                    const deltaX = (mouseX - centerX) / centerX;
+                    const deltaY = (mouseY - centerY) / centerY;
+                    
+                    // 计算移动方向角度
+                    const angle = Math.atan2(deltaY, deltaX) + Math.PI/4;
+                    const moveX = Math.cos(angle) * maxMove;
+                    const moveY = Math.sin(angle) * maxMove;
+
+                    // 应用不同方向的惯性效果
+                    const direction = index % 2 === 0 ? 1 : -1;
+                    const inertia = inertiaFactors[index % inertiaFactors.length];
+                    
+                    gsap.to(row, {
+                        x: moveX * direction * inertia,
+                        y: moveY * direction * inertia,
+                        duration: 0.8,
+                        ease: 'power3.out'
+                    });
+                });
+                requestAnimationFrame(update);
+            };
+            update();
+        };
+
+        // 初始化
+        createGrid();
+        initAnimation();
+
+        // 窗口调整重置
+        window.addEventListener('resize', () => {
+            const container = document.getElementById('gridContainer');
+            container.innerHTML = '';
+            createGrid();
+            initAnimation();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solar</title>
+</head>
+<style>
+    body,html{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400%;
+        margin: 0;
+        background-color: rgb(0, 0, 30);
+    }
+    body{
+        position: absolute;
+        top:0;
+    }
+    .solar_shell
+    {
+        top:0;
+        position: absolute;
+        height: 120vw;
+        width: 100vw;
+        overflow: hidden;
+        background-color: black;
+    }
+    .solar
+    {
+        margin:0;
+        position: absolute;
+        height: 60vw;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #solar_background{
+        z-index: 0;
+        position:absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        top:0;
+    }
+    #solar_img{
+        position:absolute;
+
+        z-index: 1;
+        scale: 0.4;
+    }
+    .eclipse
+    {
+        position:relative;
+        margin:0;
+        top:60vw;
+        height: 60vw;
+        width: 100vw;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #eclipse_img{
+        z-index: 0;
+        position:absolute;
+        object-fit: cover;
+        scale:0.35;
+    }  
+</style>
+<body>
+    <div class="solar_shell">
+        <div class="solar">
+            <img src="test/1.png" alt="solar" id="solar_background">
+            <img src="images/star_1.jpg" alt="" id="solar_img">
+        </div>
+        <div class="eclipse">
+            <img src="images/star_4.jpg" alt="" id="eclipse_img">
+        </div>
+    </div>  
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageContainer = document.querySelector('.solar'); // 获取图片容器元素
+            const maxScroll = window.innerHeight; // 最大滚动值，当图片完全透明时
+            let rate = 3;
+            //window.scrollY 返回的是当前页面已滚动的垂直距离。
+            //getBoundingClientRect().top 返回的是元素的上边缘到视口顶部的距离。
+            window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const containerTop = imageContainer.getBoundingClientRect().top + window.scrollY;
+            // 只有当 div 出现在视口时才改变透明度
+            if (scrollPosition >= containerTop) {
+                // 根据滚动位置计算透明度
+                // Math.max 确保透明度不小于 0
+                // 用户向下滚动时透明度会降低
+                const opacity = Math.max(1 - rate*(scrollPosition - containerTop) / maxScroll, 0);
+                imageContainer.querySelectorAll('#solar_background').forEach(img => {
+                img.style.opacity = opacity; // 将计算出的透明度应用于容器中的每个图片
+                });
+            } else {
+                imageContainer.querySelectorAll('#solar_background').forEach(img => {
+                img.style.opacity = 1; // 当 div 不在视口时，保持透明度为 1
+                });
+            }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const eclipseImg = document.getElementById('eclipse_img'); // 获取eclipse_img元素
+            const solarImg = document.getElementById('solar_img'); // 获取solar_img元素
+            const solarImgRect = solarImg.getBoundingClientRect(); // 获取solar_img的边界矩形
+            const solarImgCenterY = solarImgRect.top + solarImgRect.height / 2; // 计算solar_img的中心Y坐标
+
+            const imageContainer = document.querySelector('.eclipse'); // 获取图片容器元素
+            const containerTop = imageContainer.getBoundingClientRect().top + window.scrollY;
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY; // 获取当前滚动位置
+                const eclipseImgRect = eclipseImg.getBoundingClientRect(); // 获取eclipse_img的边界矩形
+                const eclipseImgCenterY = eclipseImgRect.top + eclipseImgRect.height / 2; // 计算eclipse_img的中心Y坐标
+
+                if (scrollPosition >= containerTop) {
+
+                } 
+            });
+        });
+    </script>
+</body>
+
+</html>
