@@ -246,8 +246,15 @@
     position:absolute;
     width: 20%;
     height:100px;
-    left: 200px;
+    left: 150px;
     top: 135px;
+}
+.light_part .light_sub_title
+{
+    font-size: 20px;
+    position: absolute;
+    left: 400px;
+    top: 170px;
 }
 .light_part .cards
 {
@@ -264,8 +271,8 @@
 }
 .card-wrapper {
     display: inline-block;
-    width: 140px; /* 与卡片同宽 */
-    height: 280px; /* 与卡片同高 */
+    width: 120px; /* 与卡片同宽 */
+    height: 220px; /* 与卡片同高 */
     margin: 0 10px;
     perspective: 1000px;
 }
@@ -279,8 +286,8 @@
 .light_part .cards .card
 {
     position: relative;
-    width: 140px;
-    height: 280px; /* 根据实际图片尺寸调整 */
+    width: 120px;
+    height: 220px; /* 根据实际图片尺寸调整 */
     transition: transform 0.6s;
     transform-style: preserve-3d;
     display: inline-block;
@@ -323,7 +330,7 @@
 {
     position:absolute;
     top:0px;
-    right:110px;
+    right:90px;
     width: 670px;
     height: 500px;
     object-fit: contain;
