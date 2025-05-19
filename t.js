@@ -56,18 +56,12 @@ const init_moon_button = () => {
     let currentIndex = 0;
 
     moonButton.addEventListener('click', () => {
-        // 将所有图片的透明度设置为 0
-        if(moonButton.style.opacity==0)
-        {
-            return;
-        }
+         // 将所有图片的透明度设置为 0
         moonImages.forEach((img, index) => {
             img.style.opacity = 0;
         });
-
         // 将当前图片的透明度设置为 1
         moonImages[currentIndex].style.opacity = 1;
-
         // 更新当前索引，循环显示
         currentIndex = (currentIndex + 1) % moonImages.length;
     });
