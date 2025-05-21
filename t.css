@@ -13,10 +13,15 @@
     background-repeat: no-repeat;
 
 }
-.title_part .title_pic
+.title_part .title_pic1
 {
     position:absolute;
-
+    z-index:1;
+}
+.title_part .title_pic1
+{
+    position:absolute;
+    z-index:0;
 }
 .book_part
 {
@@ -36,6 +41,7 @@
     position:absolute;
     top:5px;
     width: 100%;
+    z-index:0;
 }
 .book_part .mountain img
 {
@@ -60,6 +66,7 @@
     opacity: 0;
     transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateY(100%);
+    z-index:1;
 }
 .words_slide_in.active
 {
