@@ -40,13 +40,7 @@ h1
 {
     font-size: 60px;
 }
-input[type="range"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    margin: 10px 0;
-}
+
 /*滚动条里面轨道*/
 body::-webkit-scrollbar-track{
     background-color: black; /* 轨道透明 */

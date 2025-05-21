@@ -125,6 +125,7 @@ body, html {
     color:rgba(239, 205, 69, 0.574);
     cursor: pointer; /* 鼠标悬停时显示指针 */
     animation: float 3s ease-in-out infinite;
+    z-index: 10;
 }
 .intro
 {
@@ -152,7 +153,7 @@ body, html {
     font-size:30px;
     color:white;
 }
-.four_chap
+.three_chap
 {
     position: absolute;
     height: 20%;
@@ -169,7 +170,7 @@ body, html {
 {
     display: flex;
     float: left;
-    width: 23.5%;
+    width: 33.3%;
     margin-right:2%;
     transition: all 1s ease-in;
     font-size:40px;
@@ -177,17 +178,7 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-.chap_4
-{
-    display: flex;
-    float: left;
-    width: 23.5%;
-    transition: all 1s ease-in;
-    font-size:40px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-}
+
 
 @keyframes float 
 {

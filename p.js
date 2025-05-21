@@ -151,6 +151,11 @@ const initialize = () => {
         box.style.transitionDelay = `${Math.random() * 0.5}s`;
         observer.observe(box);
     });
+
+    document.querySelectorAll('.img_trans').forEach(box => {
+        box.style.transitionDelay = `1s`;
+        observer.observe(box);
+    });
     initCardHover();
     init_button();  
     init_year();

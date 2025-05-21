@@ -4,14 +4,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const firstPageImg = document.querySelector('.first_page #first_page_book_name'); // 获取 img 元素
     const intro = document.querySelector('.intro');
     const star = document.querySelector('.first_page .star_image'); 
-    const chap = document.querySelector('.four_chap');
-    const chapItems = document.querySelectorAll('.four_chap > div'); // 获取所有 chap 元素
+    const chap = document.querySelector('.three_chap');
+    const chapItems = document.querySelectorAll('.three_chap > div'); // 获取所有 chap 元素
     const starImages = document.querySelectorAll('.first_page .star_image'); // 获取所有 star 图片
     console.log(chap);
     let flag = 0; // 标志位
     chap.style.opacity = '0'; // 明确初始状态
 
     jumpTo.addEventListener('click', function() {
+
         if (flag == 0) { // 仅在未缩放时执行
             firstPage.classList.add('shrink');
             firstPageImg.style.opacity = '0'; // 设置 img 元素透明度

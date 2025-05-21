@@ -59,3 +59,17 @@ function showImage(index) {
   });
 
 showImage(0);
+
+// 要操作的元素
+const slider_=document.getElementById('slider');
+
+// 绑定滑块控件的input事件
+slider_.addEventListener('input',function(){
+    // 除以100：是将滑动的值转为小数
+    // 乘以720：这里的720表示翻滚2周
+    console.log(slider_.value)
+    slider_.style.setProperty(
+        '--thumb-rotate', 
+        (slider_.value / slider_.step) * (240 / ((slider_.max - slider_.min) / slider_.step)) + 'deg'
+      );
+})
