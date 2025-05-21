@@ -262,8 +262,13 @@ transform: translateX(-100%);
 }
 .cut_part .poly_times
 {
-    position: relative;
-    left:100px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    position: absolute;
+    right:0px;
+    height: 20px;
+    width: 100px;
 }
 .cut_part .rounds
 {
