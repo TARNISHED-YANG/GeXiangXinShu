@@ -127,21 +127,41 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.moon_part .moon_earth_img
+.moon_part .moon_earth_imgs
 {
     position: absolute;
+    height: 450px;
+    width: 450px;
+    transition: all 1s ease-in-out;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.moon_part .moon_earth_imgs.change
+{
+    scale:0.7;
+    transform: translateX(-150%);
+}
+.moon_part .moon_earth_imgs .moon_earth_img
+{
+    position: absolute;
+    opacity: 0;
     transition: all 1s ease-in-out;
 }
-.moon_part .moon_earth_img.change
+.moon_part .big_title
 {
-    scale:0.5;
-    transform: translateX(-200%);
+    position: absolute;
+    right:65.8%;
+    top:10%;
 }
 .moon_part .little_title
 {
     position: absolute;
-    left:77.8%;
-    top:9.1%;
+    width: 400px;
+    height: auto;
+    right:68.8%;
+    top:19.1%;
     opacity: 0;
     transform: translateX(89%);
     transition: all 0.8s ease-in;
@@ -186,6 +206,7 @@
     transition: all 0.5s ease-in;
     top:48.6%;
     left:53.6%;
+    width: 400px;
 }
 .moon_part .moon_button
 {
