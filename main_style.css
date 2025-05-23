@@ -114,13 +114,18 @@ body, html {
 }
 .jump_to
 {
-    background-image: url('images/jump_to.jpg');
+    background-image: url('images/jump_to.png');
+    width:200px;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s;
-    bottom:11%;
+    bottom:3%;
     font-size: 40px;
     color:rgba(239, 205, 69, 0.574);
     cursor: pointer; /* 鼠标悬停时显示指针 */

@@ -92,7 +92,23 @@ const init_moon_button = () => {
     moon_chara[currentIndex].style.opacity = 1;
     moon_images[currentIndex].style.opacity = 1;
 };
-
+const init_jump_to =()=>
+{
+    const jump_imgs = document.querySelectorAll(".book_part .slide_img")
+    var to = 2400
+    jump_imgs[2].addEventListener("click", function () {
+        window.scrollTo({
+            top: to,
+            behavior: "smooth"
+        });
+    })
+    jump_imgs[6].addEventListener("click", function () {
+        window.scrollTo({
+            top: to,
+            behavior: "smooth"
+        });
+    })
+}
 const initialize = () => {
     const observer = createObserver();
 
@@ -103,7 +119,9 @@ const initialize = () => {
     });
     init_moon_button();
     init_chara();
+    init_jump_to();
 };
+
 
 
 window.addEventListener('DOMContentLoaded', initialize);
