@@ -1,3 +1,84 @@
+.nav_part{
+    top:0;
+    background-color:rgba(255, 255, 255, 0.1);
+    height:100px;
+    width:100%;
+    position:fixed;
+    z-index:100;
+    margin:0;
+    padding:0;
+}
+
+.nav_part h1{
+    position:absolute;
+    left:20px;
+    top:-10px;
+    background-image:url('images/logo.png');
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:cover;
+    width:330px;
+    height:100px;
+    text-indent:-9999px;
+    margin:0;
+    padding:0;
+}
+
+.nav_part ul{
+    position:absolute;
+    right:15px;
+    top:0;
+    display:flex;
+    align-items:center;
+    height:100px;
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+    color:#ffffff;
+    transition:all 0.3s ease;
+    font-size:27px;
+    font-family:"SimSun", "宋体", serif;
+    position:relative;
+    display:inline-block;
+    padding:10px 18px;
+}
+
+.nav_part li{
+    display:inline-block;
+    margin-right:25px;
+}
+
+.nav_part a:hover{
+    display:inline-block;
+    color:#d8c47a;
+    transform:translateY(-1px);
+    text-shadow:0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.nav_part a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, rgba(218,165,32,0) 0%, rgba(218,165,32,0.8) 50%, rgba(218,165,32,0) 100%);
+    transition: width 0.3s ease;
+}
+
+.nav_part a:hover::after {
+    width: 100%;
+}
+
+/* 激活状态 */
+.nav_part a:active {
+    transform: translateY(0);
+    text-shadow: none;
+}
+
 html,body
 {
     scrollbar-gutter: auto;
