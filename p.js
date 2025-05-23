@@ -121,7 +121,7 @@ const init_button = () => {
 }
 //初始化 shadow——part 的文字切换逻辑
 const init_year = () => {
-    const texts= ['AAAA', 'BBBB', 'CCCC', 'DDDD', 'EEEE'];
+    const texts= ['2034年3月20日', '2035年9月2日', '2041年10月25日', '2057年7月1日', '2060年4月30日','2063年8月24日'];
     let index=0;
     const text_element = document.querySelector('.year_content');
     const prev_button = document.querySelector('.year_prev');

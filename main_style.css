@@ -16,7 +16,7 @@ body, html {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url('images/star_track.jpg');
+    background-image: url('images/star_track.png');
     background-position: center;
     background-size: contain; /* 确保背景图完整显示 */
     background-repeat: no-repeat; /* 防止背景图重复 */
