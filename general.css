@@ -202,5 +202,4 @@ body::-webkit-scrollbar-track{
 .moon_chara
 {
     cursor: pointer;
-    animation: key 3s ease-in-out infinite;
 }

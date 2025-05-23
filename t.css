@@ -13,12 +13,12 @@
     background-repeat: no-repeat;
 
 }
-.title_part .title_pic1
+.title_part .title_pic
 {
     position:absolute;
     z-index:1;
 }
-.title_part .title_pic1
+.title_part .title_pic
 {
     position:absolute;
     z-index:0;
@@ -197,8 +197,8 @@
 }
 .moon_part .moon_chara.active.change
 {
-    transform: translateX(160%) translateY(-130%);
     scale:1.5;
+    transform: translateX(160%) translateY(-130%) !important;
 }
 .moon_part .moon_chara img
 {
