@@ -106,6 +106,10 @@
 {
     opacity: 1;
 }
+.book_part .origin img
+{
+    transition: all 1.5s;
+}
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 请在此处对每一张图片做出调整，nth-child(i)代表是第 i 个图片
@@ -130,7 +134,7 @@
     left:6%;
     animation-delay: 1s;
     scale:1.03;
-    opacity:40%;
+    opacity:60%;
 }
 .book_part .origin img:nth-child(2)
 {
@@ -162,7 +166,7 @@
     left:40%;
     animation-delay: 0.3s;
     scale:1.06;
-    opacity:45%;
+    opacity:85%;
 }
 .book_part .origin img:nth-child(6)
 {
@@ -170,7 +174,7 @@
     left:45%;
     animation-delay: 1.3s;
     scale:1.26;
-    opacity:90%;
+    opacity:80%;
 }
 .book_part .origin img:nth-child(7)
 {
@@ -178,7 +182,7 @@
     right:30%;
     animation-delay: 2s;
     scale:1.2;
-    opacity:58%;
+    opacity:68%;
 }
 .book_part .origin img:nth-child(8)
 {
@@ -194,7 +198,7 @@
     right:16%;
     animation-delay: 0.2s;
     scale:1;
-    opacity:50%;
+    opacity:55%;
 }
 .book_part .origin img:nth-child(10)
 {
@@ -205,6 +209,22 @@
     opacity:75%;
 }
 
+.book_part .origin img:nth-child(1).active,
+.book_part .origin img:nth-child(9).active
+{
+    opacity: 0.45;
+}
+.book_part .origin img:nth-child(2).active,
+.book_part .origin img:nth-child(3).active,
+.book_part .origin img:nth-child(4).active,
+.book_part .origin img:nth-child(5).active,
+.book_part .origin img:nth-child(6).active,
+.book_part .origin img:nth-child(7).active,
+.book_part .origin img:nth-child(8).active,
+.book_part .origin img:nth-child(10).active
+{
+    opacity: 0.5;
+}
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 结束调参后，请自行观察 HTML ，若感觉参数合适，将两段注释中间的部分发给我

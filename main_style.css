@@ -114,17 +114,23 @@ body, html {
 }
 .jump_to
 {
-    background-image: url('images/jump_to.jpg');
+    background-image: url('images/jump_to.png');
+    width:200px;
+    height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s;
-    bottom:11%;
+    bottom:3%;
     font-size: 40px;
     color:rgba(239, 205, 69, 0.574);
     cursor: pointer; /* 鼠标悬停时显示指针 */
     animation: float 3s ease-in-out infinite;
+    z-index: 10;
 }
 .intro
 {
@@ -152,7 +158,7 @@ body, html {
     font-size:30px;
     color:white;
 }
-.four_chap
+.three_chap
 {
     position: absolute;
     height: 20%;
@@ -169,7 +175,7 @@ body, html {
 {
     display: flex;
     float: left;
-    width: 23.5%;
+    width: 33.3%;
     margin-right:2%;
     transition: all 1s ease-in;
     font-size:40px;
@@ -177,17 +183,7 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-.chap_4
-{
-    display: flex;
-    float: left;
-    width: 23.5%;
-    transition: all 1s ease-in;
-    font-size:40px;
-    color: white;
-    justify-content: center;
-    align-items: center;
-}
+
 
 @keyframes float 
 {

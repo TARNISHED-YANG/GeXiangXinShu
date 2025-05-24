@@ -121,13 +121,7 @@ h1
 {
     font-size: 60px;
 }
-input[type="range"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    margin: 10px 0;
-}
+
 /*滚动条里面轨道*/
 body::-webkit-scrollbar-track{
     background-color: black; /* 轨道透明 */
@@ -154,4 +148,58 @@ body::-webkit-scrollbar-track{
     font-family: "xk";
     font-size:50px;
 }
-  
+.team_info
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:200px;
+}
+.team_info .proj
+{
+    display: block;
+    text-align: center; 
+    width: 100%;
+}
+.team_info .rights
+{
+    display: block;
+    width: 100%;
+    text-align: center; 
+}
+@keyframes key
+{
+    0%
+    {
+        transform: translateY(0px);
+    }
+    50%
+    {
+        transform: translateY(-15px);
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
+.arrow
+{
+    animation: key 3s ease-in-out infinite;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom:0;
+    z-index:10;
+}
+.words_slide_in:nth-child(3),
+.words_slide_in:nth-child(7)
+{
+   cursor: pointer;
+   animation: key 3s ease-in-out infinite;
+}
+.moon_chara
+{
+    cursor: pointer;
+}

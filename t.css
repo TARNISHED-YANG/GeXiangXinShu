@@ -13,12 +13,12 @@
     background-repeat: no-repeat;
 
 }
-.title_part .title_pic1
+.title_part .title_pic
 {
     position:absolute;
     z-index:1;
 }
-.title_part .title_pic1
+.title_part .title_pic
 {
     position:absolute;
     z-index:0;
@@ -134,21 +134,41 @@
     background-position: center;
     background-repeat: no-repeat;
 }
-.moon_part .moon_earth_img
+.moon_part .moon_earth_imgs
 {
     position: absolute;
+    height: 450px;
+    width: 450px;
+    transition: all 1s ease-in-out;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.moon_part .moon_earth_imgs.change
+{
+    scale:0.7;
+    transform: translateX(-150%);
+}
+.moon_part .moon_earth_imgs .moon_earth_img
+{
+    position: absolute;
+    opacity: 0;
     transition: all 1s ease-in-out;
 }
-.moon_part .moon_earth_img.change
+.moon_part .big_title
 {
-    scale:0.5;
-    transform: translateX(-200%);
+    position: absolute;
+    right:65.8%;
+    top:10%;
 }
 .moon_part .little_title
 {
     position: absolute;
-    left:77.8%;
-    top:9.1%;
+    width: 400px;
+    height: auto;
+    right:68.8%;
+    top:19.1%;
     opacity: 0;
     transform: translateX(89%);
     transition: all 0.8s ease-in;
@@ -177,8 +197,8 @@
 }
 .moon_part .moon_chara.active.change
 {
-    transform: translateX(160%) translateY(-130%);
     scale:1.5;
+    transform: translateX(160%) translateY(-130%) !important;
 }
 .moon_part .moon_chara img
 {
@@ -193,6 +213,7 @@
     transition: all 0.5s ease-in;
     top:48.6%;
     left:53.6%;
+    width: 400px;
 }
 .moon_part .moon_button
 {
@@ -208,4 +229,85 @@
 {
     opacity: 1;
     transform: translateX(0);
+}
+.pics_part
+{
+    position: relative;
+    width: 100%;
+    height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shell
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+    max-width: 600px;
+    max-height: 600px;
+    margin:0;
+    color: white;
+    perspective: 800px;
+    transform-origin: center;
+    bottom: 150px;
+}
+.pics
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top:-170px;
+    height: 100px;
+    width: 600px;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: translateZ(-10px) rotateY(0);
+}
+.pic_item
+{
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    max-width: 600px;
+    max-height: 600px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 1);
+    border-radius: 6px;
+    image-rendering:initial; /* 设置图片渲染质量 */
+    background-size: cover; /* 确保背景图片覆盖整个元素 */
+    background-position: center; /* 确保背景图片居中 */
+    overflow: hidden; /* 确保图片不会超出边界 */
+    transform-origin: center;
+    transition: all 0.7s;
+}
+.pic_item img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片覆盖整个 div */
+}
+.pic_item:nth-child(1)
+{
+    transform: rotateY(0deg) translateZ(350px);
+}
+.pic_item:nth-child(2)
+{
+    transform: rotateY(90deg) translateZ(350px);
+}
+.pic_item:nth-child(3)
+{
+    transform: rotateY(180deg) translateZ(350px);
+}
+.pic_item:nth-child(4)
+{
+    transform: rotateY(270deg) translateZ(350px);
+}
+.button
+{
+    position: absolute;
+    bottom: 20px;
 }
