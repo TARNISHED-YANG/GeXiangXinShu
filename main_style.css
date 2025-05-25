@@ -29,7 +29,7 @@ body, html {
 }
 .first_page.shrink
 {
-    transform:  scale(0.3) translate(80%, -27%) 
+    transform:  scale(0.6) translate(35%, 0) 
    rotate(-10deg); /* 平滑移动、缩放和旋转 */
 }
 
@@ -75,7 +75,7 @@ body, html {
 }
 #main_page_logo_1
 {
-    color: white;
+    color: rgba(239, 205, 69, 0.574);
     z-index: 100;
 }
 #main_page_logo_2
@@ -85,7 +85,7 @@ body, html {
 }
 #about_us_1
 {
-    color: white;
+    color: rgba(239, 205, 69, 0.574);
     position: absolute;
     top:0;
     right:0;
@@ -154,7 +154,7 @@ body, html {
 .intro_content
 {
     display:auto;
-    font-family: "KaiTi", "楷体", serif;
+    text-align: justify;
     font-size:30px;
     color:white;
 }
@@ -199,4 +199,18 @@ body, html {
     {
         transform: translateY(0px);
     }
+}
+@font-face 
+{
+    font-family: "xk";
+    src: url("font/正文.ttf");
+}
+.main_font
+{
+    font-family: "xk";
+    font-size:50px;
+}
+body
+{
+    font-family: "xk", sans-serif;
 }

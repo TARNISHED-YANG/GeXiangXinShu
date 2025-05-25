@@ -23,7 +23,7 @@ const init_chara =() =>
     const title=document.querySelector('.little_title');
     const intro=document.querySelector('.intro');
     const m_e=document.querySelector('.moon_earth_imgs');
-    
+    const arrow = document.querySelector('.moon_arrow');
     //chara.addEventListener('click',()=>
     button.addEventListener('click',()=>
     {
@@ -31,6 +31,7 @@ const init_chara =() =>
         if(state==0)
         {
             //更改 button 图片
+            arrow.style.opacity=0;
             button.src="part_2/Webpage_2_3/button_2.png";
             title.style.opacity=0;
             intro.style.opacity=1;
@@ -42,6 +43,7 @@ const init_chara =() =>
         else if(state==1)
         {
            //更改 button 图片
+           arrow.style.opacity=1;
            button.src="part_2/Webpage_2_3/button_1.png";
             title.style.opacity=1;
             intro.style.opacity=0;

@@ -35,12 +35,12 @@
     padding:0;
 }
 
-a{
+.nav_part  a{
     text-decoration: none;
     color:#ffffff;
     transition:all 0.3s ease;
     font-size:27px;
-    font-family:"SimSun", "宋体", serif;
+    font-family: "xk", sans-serif;
     position:relative;
     display:inline-block;
     padding:10px 18px;
@@ -101,6 +101,8 @@ body
     overflow: hidden;
     background-image: url('part_2/page1/background.jpg');
     background-position: center;
+    font-family: "xk", sans-serif;
+    
 }
 div
 {
@@ -140,14 +142,15 @@ body::-webkit-scrollbar-track{
 @font-face 
 {
     font-family: "xk";
-    src: url("font/xk_font.ttf");
+    src: url("font/正文.ttf");
 }
 
-.xk_font
+.main_font
 {
     font-family: "xk";
     font-size:50px;
 }
+
 .team_info
 {
     display: flex;

@@ -2,6 +2,14 @@ body
 {
     --thumb-rotate: 0deg;
 }
+.content
+{
+    position: relative;
+    background-image: url('part_4/back_img.jpg');
+    background-position:top 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .title_part
 {
     position: relative;
@@ -26,19 +34,19 @@ body
 .title_part .title
 {
     position:absolute;
-    background-image: url('part_4/Webpage_4_1/title.png');
+    background-image: url('part_4/title.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
-    width: 75%;
-    height:400px;
-    top:150px;
+    width: 100%;
+    height:500px;
+    top:50px;
 }
 .pi_part
 {
     position: relative;
     width: 100%;
-    height: 1500px;
+    height: 950px;
 
     display: flex;
     align-items: center;
@@ -135,7 +143,6 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: pink;
     z-index: -1;
 }
 .pi_part .round_intro
@@ -239,7 +246,6 @@ transform: translateX(-100%);
     position: relative;
     width: 100%;
     height:900px;
-    background-color: gray;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,10 +254,15 @@ transform: translateX(-100%);
 {
     position: absolute;
     top:150px;
-    width: 400px;
-    height: 400px;
-    background-color: rgb(89, 158, 218);
-    right:250px;
+    width: 500px;
+    height: 500px;
+    right:270px;
+}
+.cut_part .cut_intro .cut_text
+{
+    position: relative;
+    top:30px;
+    text-align: justify;  
 }
 .cut_part .cut_intro .cut_title
 {
@@ -267,28 +278,30 @@ transform: translateX(-100%);
     align-items:center;
     justify-content: center;
     position: absolute;
-    right:0px;
+    right:-10px;
+    top:280px;
     height: 20px;
     width: 100px;
 }
 .cut_part .rounds
 {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     position: absolute;
-    top: 100px;
-    left:300px;
+    top: 124px;
+    left:262px;
 }
 .cut_part .rounds img
 {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 .cut_part .cut_pics
 {
     position: absolute;
-    bottom:50px;
+    bottom:140px;
+    left:350px;
 }
 /*
     这里也可以修改，这里是滑入的最下端的五个text
@@ -299,7 +312,7 @@ transform: translateX(-100%);
 {
     width: 60px;
     height: auto;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 .cut_part .cut_pic
 {
@@ -319,16 +332,18 @@ transform: translateX(-100%);
 }
 .cut_part #slider 
 {
-    width: 300px;
+    width: 420px;
 }
 
-.slider-bar{
+.slider_bar{
     display: flex;
     align-items: center;
+    position: relative;
+    width: 1000px;
+    top:80px;
 }
 #slider{
-    width: 90vw;
-    max-width: 500px;
+    max-width: 1000px;
     /* 去除滑块控件的外貌 */
     appearance: none;
     -webkit-appearance: none;
@@ -342,8 +357,9 @@ transform: translateX(-100%);
 #slider::-webkit-slider-runnable-track{
     appearance: none;
     -webkit-appearance: none;
-    width: 100%;
-    height: 20px;
+    width: 1000px;
+    box-sizing: 1000px;
+    height: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
@@ -394,7 +410,6 @@ transform: translateX(-100%);
     position: relative;
     width: 100%;
     height:900px;
-    background-color: rgb(16, 45, 99);
     display: flex;
     align-items: center;
     justify-content: center;
