@@ -71,11 +71,7 @@
     transform: translateY(100%);
     z-index:1;
 }
-.words_slide_in.active
-{
-    opacity: 1;
-    transform: translateY(0);
-}
+
 .words_slide_in:nth-child(1)
 {
     position: absolute;
@@ -93,7 +89,8 @@
     position: absolute;
     left:33.1%;
     top:11.8%+25%;
-    transition: all 2.5s ease-in-out;
+    transition: all 2.5s ease-in ;
+    transform: translateY(130%);
 }
 .words_slide_in:nth-child(4)
 {
@@ -118,13 +115,19 @@
     position: absolute;
     left:73.3%;
     top:11.8%+25%;
-    transition: all 2.5s ease-in-out;
+    transition: all 2.5s ease-in ;
+    transform: translateY(130%);
 }
 .words_slide_in:nth-child(8)
 {
     position: absolute;
     left:82%;
     top:24.1%+25%;
+}
+.words_slide_in.active
+{
+    opacity: 1;
+    transform: translateY(0);
 }
 .moon_part
 {
