@@ -298,11 +298,10 @@
 .pic_item
 {
     position: absolute;
-    height: 250px;
+    height: 280px;
     width: 400px;
     max-width: 600px;
     max-height: 600px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 1);
     border-radius: 6px;
     image-rendering:initial; /* 设置图片渲染质量 */
     background-size: cover; /* 确保背景图片覆盖整个元素 */
@@ -333,10 +332,24 @@
 {
     transform: rotateY(270deg) translateZ(350px);
 }
-.button
+.prev_button
 {
-    position: absolute;
-    bottom: 170px;
+    position:absolute;
+    bottom:50%;
+    left:8%;
+    width:auto;
+    height:120px;
+    cursor:pointer;
+}
+.next_button
+{
+    position:absolute;
+    bottom:50%;
+    right:8%;
+    width:auto;
+    height:120px;
+    transform:scaleX(-1);
+    cursor:pointer;
 }
 @keyframes float_arrow
 {

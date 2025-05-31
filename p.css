@@ -270,6 +270,7 @@
     height:100px;
     left: 150px;
     top: 165px;
+    font-family:"cc",sans-serif;
 }
 .light_part .light_sub_title
 {
@@ -277,6 +278,7 @@
     position: absolute;
     left: 400px;
     top: 210px;
+    font-family:"cc",sans-serif;
 }
 .light_part .cards
 {
@@ -418,6 +420,7 @@
     position: absolute;
     left:0px;
     top:0px;
+    font-family:"cc",sans-serif;
 }
 .shadow_part .words_wrapper .word_part .word_content 
 {

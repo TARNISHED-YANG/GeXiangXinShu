@@ -61,8 +61,22 @@
 {
     transform: rotateY(270deg) translateZ(350px);
 }
-.button
+.prev_button
 {
-    position: absolute;
-    bottom: 100px;
+    position:absolute;
+    bottom:180px;
+    left:10%;
+    width:auto;
+    height:80px;
+    cursor:pointer;
+}
+.next_button
+{
+    position:absolute;
+    bottom:180px;
+    right:10%;
+    width:auto;
+    height:80px;
+    transform:scaleX(-1);
+    cursor:pointer;
 }

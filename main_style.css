@@ -82,6 +82,7 @@ body, html {
 {
     color: rgba(239, 205, 69, 0.574);
     z-index: 100;
+    font-family:"cc",sans-serif;
 }
 #about_us_1
 {
@@ -92,6 +93,7 @@ body, html {
     font-size: 30px;
     margin: 0;
     z-index: 100;
+    font-family:"cc",sans-serif;
 }
 #about_us_2
 {
@@ -131,6 +133,7 @@ body, html {
     cursor: pointer; /* 鼠标悬停时显示指针 */
     animation: float 3s ease-in-out infinite;
     z-index: 10;
+    font-family:"cc",sans-serif;
 }
 .intro
 {
@@ -150,6 +153,7 @@ body, html {
     padding-left: 40px;
     font-size: 55px;
     color: white;
+    font-family:"cc",sans-serif;
 }
 .intro_content
 {
@@ -183,7 +187,10 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
+.chap_1 p,.chap_2 p,.chap_3 p
+{
+    font-family: "cc",sans-serif;
+}
 
 @keyframes float 
 {
@@ -204,6 +211,11 @@ body, html {
 {
     font-family: "xk";
     src: url("font/正文.ttf");
+}
+@font-face
+{
+    font-family:"cc";
+    src: url("font/标题.otf");
 }
 .main_font
 {
