@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             firstPageImg.style.opacity = '0'; // 设置 img 元素透明度
             flag = 1; // 设置标志位为 true
             intro.style.opacity = '1'; // 设置 intro 元素透明度
-            jumpTo.textContent = '继续点击';
+            jumpTo.textContent = '点击进入';
             star.style.opacity = '1';
         } else if (flag == 1) {
             console.log(1);
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (flag === 2) {
                 starImages.forEach((img, imgIndex) => {
                     img.style.transition = 'opacity 0.3s'; // 添加过渡动画
-                    img.style.opacity = imgIndex === index ? '1' : '0';
+                    img.style.opacity = imgIndex === index+1 ? '1' : '0';
                 });
             }
         });

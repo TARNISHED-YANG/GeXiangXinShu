@@ -97,16 +97,17 @@ const init_moon_button = () => {
 const init_jump_to =()=>
 {
     const jump_imgs = document.querySelectorAll(".book_part .slide_img")
-    var to = 2400
+    var to3 = 1860
     jump_imgs[2].addEventListener("click", function () {
         window.scrollTo({
-            top: to,
+            top: to3,
             behavior: "smooth"
         });
     })
+    var to4 = 2680
     jump_imgs[6].addEventListener("click", function () {
         window.scrollTo({
-            top: to,
+            top: to4,
             behavior: "smooth"
         });
     })

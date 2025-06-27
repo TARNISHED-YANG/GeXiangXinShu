@@ -30,7 +30,6 @@
     width: 200px;
     max-width: 600px;
     max-height: 100px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 1);
     border-radius: 6px;
     image-rendering:initial; /* 设置图片渲染质量 */
     background-size: cover; /* 确保背景图片覆盖整个元素 */

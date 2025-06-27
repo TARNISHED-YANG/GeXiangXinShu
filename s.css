@@ -278,7 +278,7 @@ transform: translateX(-100%);
     align-items:center;
     justify-content: center;
     position: absolute;
-    right:-10px;
+    right:-26px;
     top:280px;
     height: 20px;
     width: 100px;
@@ -359,8 +359,8 @@ transform: translateX(-100%);
     -webkit-appearance: none;
     width: 1000px;
     box-sizing: 1000px;
-    height: 10px;
-    background-color: #fff;
+    height: 7.5px;
+    background-color:rgba(104,130,152);
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     cursor: pointer;
@@ -369,8 +369,8 @@ transform: translateX(-100%);
 #slider::-webkit-slider-thumb{
     appearance: none;
     -webkit-appearance: none;
-    width: 50px;
-    height: 50px;
+    width: 34px;
+    height: 34px;
     /* 设置背景图片 不平铺 */
     background: url('part_4/slider.png') no-repeat;
     /* 对图片进行剪切,保留原始比例 */
@@ -380,7 +380,7 @@ transform: translateX(-100%);
     /* 默认放大1.9倍 */
     /* 通过var函数获取自定义属性--thumb-rotate,设置要旋转的角度 */
     transform: scale(1.9) rotate(var(--thumb-rotate));
-    margin-top: -18px;
+    margin-top: -16px;
     transition: all 0.6s;
 }
 /* 自定义滑块的活动态样式 */
@@ -410,14 +410,11 @@ transform: translateX(-100%);
     position: relative;
     width: 100%;
     height:900px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 .last_part .last_title
 {
     position: absolute;
-    width:300px;
+    width:550px;
     height: auto;
     top:180px;
     left:60px;
@@ -425,46 +422,27 @@ transform: translateX(-100%);
     background-size: contain;
     background-repeat: no-repeat;
 }
-.last_part .last_cloud
-{
-    position: absolute;
-    width:auto;
-    height:60%;
-    top:350px;
-    left:0px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.last_part .last_sun {
-    position: absolute;
-    width: auto;
-    height: 60%;
-    top: 350px;
-    left: 50%; 
-    transform: translateX(-50%); 
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index:1;
-}
 .last_part .last_text
 {
     position:absolute;
-    top:400px;
-    left:80px;
-    max-width:450px;
-    font-size:20px;
-    line-height:2;
-    color:black;
+    background-image: url("part_4/4_4/part_4.png");
+    background-position: 50% 50%;
+    background-size:107% auto;
+    background-repeat:no-repeat;
+    width:100%;
+    height:900px;
+    bottom:-70px;
 }
-.last_part .last_pic
+.last_part .last_text p
 {
     position:absolute;
-    top:70%;
-    right:80px;
-    transform:translateY(-50%);
-    max-width:500px;
-    height:auto;
-    z-index:0;
+    text-align:justify;
+    color:white;
+    font-family: "xk" sans-serif;
+    font-size:20px;
+    line-height:1.05em;
+    top:325px;
+    left:395px;
+    width:493px;
+    text-indent:2em;
 }

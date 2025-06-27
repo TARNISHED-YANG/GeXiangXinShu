@@ -10,10 +10,11 @@
 }
 .content
 {
-    background-image: url('part_2/page1/background.jpg');
+    background-image: url('part_2/page1/background.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position:top 0;
 }
 .title_part .title_pic1
 {
@@ -22,7 +23,15 @@
 }
 .title_part .title_pic2
 {
-    position: absolute
+    position: absolute;
+    opacity:0;
+    animation: fadeIn 3s cubic-bezier(0.4,0,0.2,1) forwards;
+    animation-delay:0.8s;
+}
+@keyframes fadeIn
+{
+    0%{opacity:0;}
+    100%{opacity:1;}
 }
 .book_part
 {
@@ -42,20 +51,22 @@
     top:5px;
     left:0;
     width: 100%;
+    height:auto;
     z-index:0;
-    object-fit: cover;
 }
 .book_part .mountain img
 {
     position: absolute;
-    object-fit: cover;
+    width:100%;
+    height:auto;
+    object-fit:cover;
 }
 .book_part .book_page
 {
-    height:400px;
+    height:600px;
     width: 100%;
     position: absolute;
-    bottom:0px;
+    bottom:-200px;
 }
 .book_page_img
 {
@@ -167,8 +178,10 @@
 .moon_part .big_title
 {
     position: absolute;
-    right:64.8%;
-    top:10%;
+    right:60%;
+    top:8%;
+    height:100px;
+    width:auto;
 }
 .moon_part .little_title
 {
@@ -235,18 +248,22 @@
 .moon_part .moon_button
 {
     position: absolute;
-    left:84.6%;
-    top:87.4%;
+    left:76%;
+    top:81%;
+    height:100px;
+    width:auto;
     cursor: pointer;
     transform: translateX(89%);
     opacity: 0;
     transition: all 0.8s ease-in-out;
+    z-index:1;
 }
 .moon_part .moon_button.active
 {
     opacity: 1;
     transform: translateX(0);
 }
+
 .moon_part .moon_arrow
 {
     position: absolute;
