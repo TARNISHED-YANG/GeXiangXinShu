@@ -78,21 +78,6 @@ body, html {
     color: rgba(239, 205, 69, 0.574);
     z-index: 100;
 }
-#main_page_logo_2
-{
-    color: rgba(239, 205, 69, 0.574);
-    z-index: 100;
-}
-#about_us_1
-{
-    color: rgba(239, 205, 69, 0.574);
-    position: absolute;
-    top:0;
-    right:0;
-    font-size: 30px;
-    margin: 0;
-    z-index: 100;
-}
 #about_us_2
 {
     color:rgba(239, 205, 69, 0.574);
@@ -115,11 +100,11 @@ body, html {
 .jump_to
 {
     background-image: url('images/jump_to.png');
-    width:200px;
+    width:260px;
     height: 200px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center center;
     position: absolute;
     display: flex;
     align-items: center;
@@ -127,18 +112,19 @@ body, html {
     transition: all 0.3s;
     bottom:3%;
     font-size: 40px;
-    color:rgba(239, 205, 69, 0.574);
+    color:white;
     cursor: pointer; /* 鼠标悬停时显示指针 */
     animation: float 3s ease-in-out infinite;
     z-index: 10;
+    font-family:"cc",sans-serif;
 }
 .intro
 {
     position: absolute; /* 确保元素定位 */
     top: 20%; /* 设置元素的垂直位置 */
-    left: 5%; /* 设置元素的水平位置 */
+    left:4%; /* 设置元素的水平位置 */
     height:60%;
-    width: 40%;
+    width: 50%;
     opacity: 0;
     transition: all 1.2s;
 }
@@ -147,16 +133,18 @@ body, html {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    padding-left: 40px;
-    font-size: 55px;
+    padding-left: 35px;
+    font-size: 60px;
     color: white;
+    font-family:"cc",sans-serif;
 }
 .intro_content
 {
     display:auto;
     text-align: justify;
-    font-size:30px;
+    font-size:25px;
     color:white;
+    text-indent:2em;
 }
 .three_chap
 {
@@ -183,7 +171,10 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
+.chap_1 p,.chap_2 p,.chap_3 p
+{
+    font-family: "cc",sans-serif;
+}
 
 @keyframes float 
 {
@@ -204,6 +195,11 @@ body, html {
 {
     font-family: "xk";
     src: url("font/正文.ttf");
+}
+@font-face
+{
+    font-family:"cc";
+    src: url("font/标题.otf");
 }
 .main_font
 {

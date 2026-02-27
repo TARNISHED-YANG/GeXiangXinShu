@@ -40,7 +40,7 @@
     color:#ffffff;
     transition:all 0.3s ease;
     font-size:27px;
-    font-family: "xk", sans-serif;
+    font-family: "cc", sans-serif;
     position:relative;
     display:inline-block;
     padding:10px 18px;
@@ -144,6 +144,11 @@ body::-webkit-scrollbar-track{
     font-family: "xk";
     src: url("font/正文.ttf");
 }
+@font-face
+{
+    font-family:"cc";
+    src: url("font/标题.otf");
+}
 
 .main_font
 {
@@ -165,12 +170,14 @@ body::-webkit-scrollbar-track{
     display: block;
     text-align: center; 
     width: 100%;
+    font-size:15px;
 }
 .team_info .rights
 {
     display: block;
     width: 100%;
     text-align: center; 
+    font-size:15px;
 }
 @keyframes key
 {
@@ -190,8 +197,8 @@ body::-webkit-scrollbar-track{
 .arrow
 {
     animation: key 3s ease-in-out infinite;
-    width: 100px;
-    height: 100px;
+    width: 66px;
+    height: 66px;
     position: absolute;
     bottom:0;
     z-index:10;

@@ -1,4 +1,3 @@
-
 .content
 {
     position: relative;
@@ -248,12 +247,12 @@
     background-position: center;
     background-repeat: no-repeat;
     width: 50%;
-    height: 200px;
+    height: 300px;
     position: absolute;
     opacity: 0;
     transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
-    left: 0px;
-    top: 30%;
+    left: 50px;
+    top: 25%;
     transform: translateX(-90%);
     cursor: pointer;
 }
@@ -270,6 +269,7 @@
     height:100px;
     left: 150px;
     top: 165px;
+    font-family:"cc",sans-serif;
 }
 .light_part .light_sub_title
 {
@@ -277,6 +277,7 @@
     position: absolute;
     left: 400px;
     top: 210px;
+    font-family:"cc",sans-serif;
 }
 .light_part .cards
 {
@@ -418,6 +419,7 @@
     position: absolute;
     left:0px;
     top:0px;
+    font-family:"cc",sans-serif;
 }
 .shadow_part .words_wrapper .word_part .word_content 
 {
@@ -584,7 +586,8 @@
     left:450px;
     height: 30px;
     width: 30px;
-    background-image: url('part_1/next_arrow.png');
+    background-image: url('part_1/prev_arrow.png');
+    transform:scaleX(-1);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
